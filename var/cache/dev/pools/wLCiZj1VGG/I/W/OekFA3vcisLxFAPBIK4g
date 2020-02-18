@@ -1,0 +1,68 @@
+<?php //%255BApp%255CEntity%255CMediaObject%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\Entity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Entity')),
+        clone ($p['ApiPlatform\\Core\\Annotation\\ApiResource'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('ApiPlatform\\Core\\Annotation\\ApiResource')),
+        clone ($p['Vich\\UploaderBundle\\Mapping\\Annotation\\Uploadable'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Vich\\UploaderBundle\\Mapping\\Annotation\\Uploadable')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'collectionOperations' => [
+                1 => [
+                    'post' => [
+                        'controller' => 'App\\Controller\\CreateMediaObjectAction',
+                        'deserialize' => false,
+                        'access_control' => 'is_granted(\'ROLE_USER\')',
+                        'validation_groups' => [
+                            'Default',
+                            'media_object_create',
+                        ],
+                        'openapi_context' => [
+                            'requestBody' => [
+                                'content' => [
+                                    'multipart/form-data' => [
+                                        'schema' => [
+                                            'type' => 'object',
+                                            'properties' => [
+                                                'file' => [
+                                                    'type' => 'string',
+                                                    'format' => 'binary',
+                                                ],
+                                            ],
+                                        ],
+                                    ],
+                                ],
+                            ],
+                        ],
+                    ],
+                    'get',
+                ],
+            ],
+            'iri' => [
+                1 => 'http://schema.org/MediaObject',
+            ],
+            'itemOperations' => [
+                1 => [
+                    'get',
+                ],
+            ],
+            'attributes' => [
+                1 => [
+                    'normalization_context' => [
+                        'groups' => [
+                            'media_object_read',
+                        ],
+                    ],
+                ],
+            ],
+        ],
+    ],
+    [
+        $o[0],
+        $o[1],
+        $o[2],
+    ],
+    []
+); }];
